@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: discord-ex
+
+resources:
+  - ./resources/bull.yaml
+
+secretGenerator:
+  - name: secrets
+    env: ./secrets.env
+
+# configMapGenerator:
+#   - name: config
+#     env: ./config.env
+
+generatorOptions:
+  disableNameSuffixHash: true

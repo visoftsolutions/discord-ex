@@ -1,0 +1,8 @@
+services:
+  bull:
+    container_name: discord-ex-bull
+    hostname: bull
+    build:
+      context: .
+    env_file:
+      - ./.env
